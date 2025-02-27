@@ -1,0 +1,34 @@
+{
+  "name": "rust:latest",
+  "service": "devcontainer",
+  "dockerComposeFile": ["docker-compose.yml"],
+  "postAttachCommand": "lefthook install && git config --global diff.ool ...",
+  "postStartCommand": "git config --global --add safe.directory /workspaces/${localWorkspaceFolderBasename} && cargo fetch && cargo build",
+  "remoteEnv": {
+    "PATH": "${containerEnv:PATH}:/usr/local/cargo/bin"
+  },
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,consistency=delegated",
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscode.json-language-features",
+        "oderwat.indent-rainbow",
+        "EditorConfig.EditorConfig",
+        "tamasfe.even-better-toml",
+        "rust-lang.rust-analyzer",
+        "vadimcn.vscode-lldb",
+        "rodrigocfd.format-comment",
+        "usernamehw.errorlens",
+        "vivaxy.vscode-conventional-commits",
+        "mikestead.dotenv",
+        "redhat.vscode-yaml",
+        "ms-azuretools.vscode-docker",
+        "eamodio.gitlens"
+      ]
+    }
+  }
+}

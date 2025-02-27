@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "ms-vscode-remote.remote-containers",
+    "editorconfig.editorconfig",
+    "tamasfe.even-better-toml",
+    "rust-lang.rust-analyzer",
+    "vadimcn.vscode-lldb",
+    "usernamehw.errorlens",
+    "vivaxy.vscode-conventional-commits",
+    "mikestead.dotenv",
+    "redhat.vscode-yaml"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "debug.allowBreakpointsEverywhere": true,
+  "editor.codeActionsOnSave": {
+    "quickfix.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
+  },
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "errorLens.messageEnabled": false,
+  "files.insertFinalNewline": true,
+  "git.branchPrefix": "feature/",
+  "git.branchProtection": [
+    "alpha",
+    "beta",
+    "stable"
+  ],
+  "git.branchProtectionPrompt": "alwaysPrompt",
+  "git.branchValidationRegex": "^(feature|bugfix|hotfix|release)/[a-z0-9-]+$",
+  "lldb.suppressMissingSourceFiles": true,
+  "rust-analyzer.trace.server": "verbose",
+  "[markdown]": {
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "other": "off",
+      "strings": "off"
+    },
+    "editor.rulers": [
+      80,
+      120
+    ],
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "editor.wordWrap": "on"
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+}

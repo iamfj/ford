@@ -1,0 +1,27 @@
+services:
+  docs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: docs
+    ports:
+      - 3000:3000
+      - 35729:35729
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fs http://0.0.0.0:3000 || exit 1"]
+      interval: 5s
+      timeout: 4s
+      retries: 10
+    volumes:
+      - ../docs:/home/node/docs:ro
+
+  devcontainer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: devcontainer
+    depends_on:
+      docs:
+        condition: service_healthy
+    volumes:
+      - ../..:/workspaces:cached
