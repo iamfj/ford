@@ -1,6 +1,7 @@
 mod commands;
 mod libs;
 
+use crate::libs::config::StackConfig;
 use clap::Parser;
 
 #[derive(clap::Subcommand)]
@@ -24,6 +25,11 @@ struct Cli {
 
 fn main() -> anyhow::Result<()> {
   let cli = Cli::parse();
+
+  // Validate configuration for all commands except Init
+  if !matches!(cli.command, Commands::Init) {
+    StackConfig::load()?;
+  }
 
   match cli.command {
     Commands::Init => todo!(),
