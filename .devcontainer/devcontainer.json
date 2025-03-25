@@ -5,7 +5,7 @@
   "postAttachCommand": "lefthook install && git config --global diff.ool ...",
   "postStartCommand": "git config --global --add safe.directory /workspaces/${localWorkspaceFolderBasename} && cargo fetch && cargo build",
   "remoteEnv": {
-    "PATH": "${containerEnv:PATH}:/usr/local/cargo/bin"
+    "PATH": "${containerEnv:PATH}:/usr/local/cargo/bin:/workspaces/${localWorkspaceFolderBasename}/target/debug"
   },
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,consistency=delegated",
